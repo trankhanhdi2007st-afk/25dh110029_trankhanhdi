@@ -1,0 +1,28 @@
+﻿<HTML>
+<HEAD>
+</HEAD>
+<BODY>
+    <h2>Javascript Palindrome Checking Function</h2>
+    <p><input type="text" id="inputText" /></p>
+    <p><input type="button" value="Check" onclick="palindrome()" /></p>
+    <p id="outputText"></p>
+    <script language="Javascript">
+ function palindrome() {
+ var myString = document.getElementById("inputText").value;
+
+ var removeChar = myString.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+
+ var checkPalindrome = removeChar.split('').reverse().join('');
+ var outParagraph = document.getElementById("outputText");
+
+ if (removeChar == checkPalindrome) {
+ outParagraph.innerHTML = "<div>" + myString + " is a Palindrome
+<div>";
+ } else {
+ outParagraph.innerHTML = "<div>" + myString + " is not a Palindrome
+</div>";
+ }
+ }
+    </script>
+</BODY>
+</HTML>

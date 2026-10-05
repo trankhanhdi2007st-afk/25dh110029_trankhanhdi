@@ -1,0 +1,135 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <script src="~/Scripts/MyJS/Bai1.js"></script>
+
+    <meta>
+    <title>Phiếu tham gia CLB Tin học LUBU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            width: 650px;
+            border: 1px solid #888;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #000;
+        }
+
+            h2 span {
+                color: #00a2e8;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 6px;
+            vertical-align: middle;
+        }
+
+        .label {
+            width: 120px;
+        }
+
+        .input-col {
+            width: 220px;
+        }
+
+        input[type="text"], select {
+            width: 90%;
+            padding: 4px;
+        }
+
+        .error {
+            color: red;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-container {
+            text-align: center;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>PHIẾU THAM GIA CLB TIN HỌC <span>LUBU</span></h2>
+
+        <form id="formDangKy">
+            <table>
+                <tr>
+                    <td class="label"><label for="maSV">Mã sinh viên :</label></td>
+                    <td class="input-col"><input type="text" id="maSV" placeholder="Nhập Mã SV"></td>
+                    <td><span id="errMaSV" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td class="label"><label for="hoTen">Họ và tên :</label></td>
+                    <td class="input-col"><input type="text" id="hoTen" placeholder="Nhập Họ và tên"></td>
+                    <td><span id="errHoTen" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td class="label"><label for="tuoi">Tuổi :</label></td>
+                    <td class="input-col"><input type="text" id="tuoi" placeholder="Nhập tuổi > 18"></td>
+                    <td><span id="errTuoi" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td class="label">Ngoại ngữ :</td>
+                    <td class="input-col">
+                        <label><input type="checkbox" name="ngoaiNgu" value="Anh"> Anh</label>
+                        <label><input type="checkbox" name="ngoaiNgu" value="Pháp"> Pháp</label>
+                        <label><input type="checkbox" name="ngoaiNgu" value="Nhật"> Nhật</label>
+                    </td>
+                    <td><span id="resultNgoaiNgu" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td class="label"><label for="chuyenNganh">Chuyên ngành :</label></td>
+                    <td class="input-col">
+                        <select id="chuyenNganh" onchange="capNhatSoTruong()">
+                            <option value="Hệ thống">Hệ thống</option>
+                            <option value="Phần mềm">Phần mềm</option>
+                            <option value="Mạng máy tính">Mạng máy tính</option>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="label">Sở trường :</td>
+                    <td class="input-col" colspan="2">
+                        <i id="txtSoTruong" style="color: #333;">Phân tích & Thiết kế</i>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="btn-container">
+                <button type="button" onclick="kiểmTraVaDangKy()">Đăng ký</button>
+            </div>
+
+            <div style="margin-top: 15px; text-align: center;">
+                <span id="thongBaoChung" class="error"></span>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>

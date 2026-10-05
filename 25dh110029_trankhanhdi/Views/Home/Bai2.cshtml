@@ -1,0 +1,163 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script src="~/Scripts/MyJS/Bai2.js"></script>
+    <meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin giao hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 3px;
+            display: block;
+            min-height: 15px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .btn-group {
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .btn-blue {
+            background-color: #31708f;
+        }
+
+        .btn-green {
+            background-color: #5cb85c;
+        }
+
+        .btn-red {
+            background-color: #d9534f;
+            padding: 8px 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Thông tin giao hàng</h3>
+        <form id="deliveryForm" onsubmit="return false;">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="fullName">Tên</label>
+                        <input type="text" id="fullName" class="required-field" data-name="Tên">
+                        <span class="error-message" id="fullName-error"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="address">Địa chỉ nhận hàng</label>
+                        <input type="text" id="address" class="required-field" data-name="Địa chỉ">
+                        <span class="error-message" id="address-error"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="text" id="phone">
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="city">Tỉnh / thành phố</label>
+                        <input type="text" id="city" class="required-field" data-name="Tỉnh/thành phố">
+                        <span class="error-message" id="city-error"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="district">Quận / Huyện</label>
+                        <input type="text" id="district" class="required-field" data-name="Quận/huyện">
+                        <span class="error-message" id="district-error"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="ward">Phường / Xã</label>
+                        <input type="text" id="ward" class="required-field" data-name="Phường/xã">
+                        <span class="error-message" id="ward-error"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Lựa chọn tên cho địa chỉ thường dùng</label>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-blue" onclick="showAddressType('Văn phòng')">Văn phòng</button>
+                    <button type="button" class="btn btn-green" onclick="showAddressType('Nhà riêng')">Nhà riêng</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-red" onclick="handleSave()">Lưu</button>
+        </form>
+    </div>
+
+
+</body>
+</html>
